@@ -140,6 +140,13 @@ This example follows the recommended practice for version checking:
 <a name="ps_a"></a> 
 ## Check for a minimum required .NET Framework version (4.5 and later) with PowerShell
 
+The following outputs the value of the `Release` property:
+  ```PowerShell
+  gpv 'HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\' Release
+  # It's the same as:
+  Get-ItemPropertyValue -Path 'HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\' -Name Release
+  ```
+  
 The following example checks the value of the `Release` keyword to determine whether .NET Framework 4.6.2 or higher is installed (returning `True` if it is and `False` otherwise).
 
     ```PowerShell
